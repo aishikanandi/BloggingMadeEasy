@@ -1,0 +1,13 @@
+<%- include('partials/header'); -%>
+
+<% postarray1.forEach(function(element){ %>
+
+        <a href="/home/<%=element._id%>"><h2><b><%=element.title %></b></h2></a>
+        <%if(element.post.length>100){%>
+        <p class="post"><%= element.post.substr(0,100) %>....<a href="/home/<%=element._id%>">Read More</a></p>
+        <%}else{%>
+                <p class="post"><%= element.post%></p>
+        <%}%>
+<% })  %>
+
+<%- include('partials/footer'); -%>
